@@ -1,8 +1,10 @@
 import { FaShoppingCart } from 'react-icons/fa'
 // import { BsMinecart } from 'react-icons/bs'
+
+import { ImBoxAdd } from 'react-icons/im'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useSelector, useDispatch } from 'react-redux';
-const Navbar = ({ setIsModalOpen }) => {
+const Navbar = ({ setIsModalOpen, setAddmodal }) => {
 
   const cartQuantity = useSelector(state => state.cart.cartQuantity);
   return (<motion.div
@@ -38,9 +40,16 @@ const Navbar = ({ setIsModalOpen }) => {
 
         <FaShoppingCart className='text-slate-800' />
 
+
+
       </div>
 
+      <ImBoxAdd onClick={() => {
 
+
+        setAddmodal(true)
+
+      }} />
 
 
 
